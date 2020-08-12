@@ -1,0 +1,60 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+        <lightning-layout-item size="12">
+            <div class="heading">Find a Clinical Trial</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="details">We have clinical trials enrolling or planned for multiple cancer types. Choose from the list below to learn more.</div>
+        </lightning-layout-item>
+
+        <!--<div class="slds-grid">
+            <div class="slds-col slds-p-horizontal_large">
+              <span>
+                <lightning-layout-item>
+                    <lightning-button  label="Cervical" title="Cervical" class="stretchButton" style="color: #D60057;" onclick={GoToHematologicalPage}></lightning-button>
+                </lightning-layout-item>
+              </span>
+            </div>
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <lightning-layout-item>
+                    <lightning-button  label="Hematological" title="Hematological"  class="stretchButton" style="color: #D60057;" onclick={GoToHematologicalPage}></lightning-button>
+                </lightning-layout-item>
+              </span>
+            </div>
+          </div>-->
+
+          <!--<button class="slds-button slds-button--neutral slds-x-small-button--horizontal slds-max-small-button--stretch">Button</button>
+            <button class="slds-button slds-button--neutral slds-x-small-button--horizontal slds-max-small-buttons--stretch slds-max-small-buttons--stacked">Button</button>
+            <div class="slds-x-small-buttons--horizontal slds-max-small-buttons--stacked slds-max-small-buttons--stretch">
+            <button class="slds-button slds-button--neutral">Button</button>
+            <button class="slds-button slds-button--neutral">Button</button>
+            </div>
+
+
+            <button class="slds-button slds-button--neutral slds-max-small-button--stretch">Button</button>
+            <div class="slds-max-small-buttons--stretch slds-max-small-buttons--stacked slds-small-buttons--horizontal">
+            <button class="slds-button slds-button--neutral">Button</button>
+            <button class="slds-button slds-button--neutral">Button</button>
+            </div>-->
+
+            <div style="width:200px;"> //This makes the max width of everything inside 200px.
+                <div class="slds-grid slds-grid_pull-padded-medium">
+                  <div class="slds-col slds-p-horizontal_medium">
+                      <lightning:layout horizontalAlign="spread" pullToBoundary="small">
+                          <lightning:layoutItem flexibility="grow">
+              
+                              <lightning:button variant="neutral" label="TEST" iconName="utility:up" iconPosition="right">
+              
+                          </lightning:layoutItem>
+                      </lightning:layout>
+                  </div>
+                </div>
+              </div>
+
+        
+       
+
+    </lightning-layout>
+</template>

@@ -1,0 +1,55 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+        <lightning-layout-item size="12">
+            <div class="heading">Find a Clinical Trial</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="details">We have clinical trials enrolling or planned for multiple cancer types. Choose from the list below to learn more.</div>
+        </lightning-layout-item>
+
+        <div class="slds-grid">
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <lightning-layout-item>
+
+                    <div class="slds-p-around_small">
+                        <!--<button type="submit" class="slds-button slds-button_brand slds-button_stretch">HTML Button</button>-->
+                        <lightning-button variant="brand" label="Cervical" title="Cervical" class="slds-button slds-button_brand slds-button_stretch" onclick={GoToHematologicalPage}></lightning-button>
+                    </div>
+
+                    <div class="slds-p-around_small">
+                        <lightning-button 
+                        type="submit" 
+                        variant="brand" 
+                        label="Cervical" 
+                        class="stretchButton slds-p-top_x-small btnclass"
+                        onclick={GoToHematologicalPage}></lightning-button>
+                    </div>
+                </lightning-layout-item>
+              </span>
+            </div>
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <lightning-layout-item>
+                    <div class="slds-p-around_small">
+                        <lightning-button 
+                        type="submit" 
+                        variant="brand" 
+                        label="Hematological" 
+                        class="stretchButton slds-p-top_x-small btnclass"
+                        onclick={GoToHematologicalPage}></lightning-button>
+                    </div>
+                </lightning-layout-item>
+              </span>
+            </div>
+          </div>
+
+
+        
+       
+
+    </lightning-layout>
+
+    
+</template>

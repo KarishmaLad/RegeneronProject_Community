@@ -1,0 +1,79 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+        <lightning-layout-item size="12">
+            <div class="heading">Find Your Clinical Trial Matches</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="details">Enter your details below to help us find a trial that’s a match for you.</div>
+        </lightning-layout-item>
+    </lightning-layout>
+        <lightning-card class="slds-align_absolute-left slds-text-align_left cards">
+            <lightning-layout class="slds-align_absolute-left slds-text-align_left combos">
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-combobox 
+                        name="category" 
+                        label="Category" 
+                        value={selectedCategory} 
+                        placeholder="Select Category" 
+                        options={CategoryOptions} 
+                        onchange={handleChangeCategory}>
+                    </lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+                
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-combobox 
+                        name="location" 
+                        label="Location" 
+                        value={selectedLocation} 
+                        placeholder="Select Location" 
+                        options={LocationOptions} 
+                        onchange={handleChangeLocation}>
+                    </lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-input type="text"  name= "age" label="Age" value={agevalue} max-length="3" style="width: 60px;"></lightning-input>                               
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-radio-group name="Gender"
+                        label="Sex"
+                        options={Genderoptions}
+                        value={gendervalue}
+                        type="radio"
+                        onchange={genderChange}>
+                      </lightning-radio-group>              
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <br/>
+                        <lightning-button variant="brand" label="Find Trials" onclick={findtrials} class="slds-m-left_x-small findtrialbtn"></lightning-button>           
+                    </div>
+                </lightning-layout-item>  
+            </lightning-layout>
+
+            <lightning-layout if:true={boolVisible}>
+                <div>
+                    <template for:each={searchresults} for:item="res">
+                        <lightning-layout-item key={}
+                    </template>
+                </div>
+                
+            </lightning-layout>
+        </lightning-card>
+
+       
+
+
+   
+</template>

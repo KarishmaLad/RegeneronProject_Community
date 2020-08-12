@@ -1,0 +1,161 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+        <lightning-layout-item size="12">
+            <div class="heading">Find Your Clinical Trial Matches</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="details">Enter your details below to help us find a trial that’s a match for you.</div>
+        </lightning-layout-item>
+    </lightning-layout>
+        <lightning-card>
+            <lightning-layout class="slds-align_absolute-left slds-text-align_left combos">
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-combobox 
+                        name="category" 
+                        label="Category" 
+                        value={selectedCategory} 
+                        placeholder="Select Category" 
+                        options={CategoryOptions} 
+                        onchange={handleChangeCategory}>
+                    </lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+                
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-combobox 
+                        name="location" 
+                        label="Location" 
+                        value={selectedLocation} 
+                        placeholder="Select Location" 
+                        options={LocationOptions} 
+                        onchange={handleChangeLocation}>
+                    </lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-input type="text"  name= "age" label="Age" value={agevalue} max-length="3" style="width: 60px;"></lightning-input>                               
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-radio-group name="Gender"
+                        label="Sex"
+                        options={Genderoptions}
+                        value={gendervalue}
+                        type="radio"
+                        onchange={genderChange}>
+                      </lightning-radio-group>              
+                    </div>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <br/>
+                        <lightning-button variant="brand" label="Find Trials" onclick={findtrials} class="slds-m-left_x-small findtrialbtn"></lightning-button>           
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout if:true={boolVisible}>
+                <div>
+                  <br/>
+                  <br/>
+                  <lightning-layout-item size="12">
+                    <div class="h2result">{searchresultsCount} Result</div>
+                 </lightning-layout-item>
+                 <!-- <h2 class="h2result">{searchresultsCount} Results</h2>-->
+                    <template for:each={searchresults} for:item="res">
+                        <lightning-layout-item key={res.Id} size="3" class="slds-var-p-around_x-large">
+                            <lightning-card   class="resultTile">
+
+                                <div class="slds-grid slds-grid--align-spread">
+                                    <div class="slds-col--padded">
+                                       <h3 style="font-size:medium; color:#055D94">Status</h3>
+                                        Recruiting
+                                    </div>
+                                    <div class="slds-col--padded">
+                                        <h3 style="font-size:medium; color:#055D94">Trial Name</h3>
+                                        {res.Description__c}
+                                    </div>
+                                    <div class="slds-col--padded"></div>
+                                    <div class="slds-col--padded trailstyle">{res.Name}</div>
+                                    </div>
+                                    <br/>
+                                  <div class="slds-grid slds-grid--align-spread">
+                                    <div class="slds-col--padded">
+                                        <h3 style="font-size:medium; color:#055D94"> Nearest Location</h3>
+                                        239 miles away
+                                    </div>
+                                    <div class="slds-col--padded">
+                                        <h3 style="font-size:medium; color:#055D94; position:relative; right:48px">Condition(s)</h3>
+                                        {res.Categories__c}
+                                    </div>
+                                    <div class="slds-col--padded">
+                                        <h3 style="font-size:medium; color:#055D94">Phase</h3>
+                                        {res.Phase__c}
+                                    </div>
+                                    <div class="slds-col--padded">
+                                        <button class="button" style="vertical-align:middle"><span>Learn More</span></button>
+                                    </div>
+                                  </div>
+
+
+                               <!-- <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                      <span>Category:  {res.Categories__c}</span>
+                                    </div>
+                                    <div class="slds-col">
+                                      <span>Location:  {res.Locations__c}</span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <span>{res.Name}</span>
+                                      </div>
+                                    
+                                  </div>
+
+                                  <div class="slds-grid slds-grid_align-space">
+                                    <div class="slds-col">
+                                        <span>Phase:  {res.Phase__c}</span>
+                                      </div>
+                                      <div class="slds-col">
+                                        <span>Description:  {res.Description__c}</span>
+                                      </div>
+                                      <div class="slds-col">
+                                       <span> <lightning-button variant="brand" label="Learn More" class="slds-m-left_x-large findtrialbtn"></lightning-button></span>
+                                      </div>
+                                  </div>-->
+                                  <!--<div class="slds-grid slds-grid_align-space resultTileBody">
+                                    <div class="slds-col">
+                                      <span>Phase:  {res.Phase__c}</span>
+                                    </div>
+                                    <div class="slds-col">
+                                      <span>Description:  {res.Description__c}</span>
+                                    </div>
+                                    <div class="slds-col">
+                                     <span> <lightning-button variant="brand" label="Learn More" class="slds-m-left_x-large findtrialbtn"></lightning-button></span>
+                                    </div>
+                                  </div>-->
+
+                              <!-- <div class= "slds-var-p-horizontal_medium resultTileBody">
+                                     <p class="slds-var-m-bottom_xx-medium"> Category: {res.Categories__c}</p>
+                                    <p class="slds-var-m-bottom_xx-medium"> Location: {res.Locations__c}</p>
+                                    <p class="slds-var-m-bottom_xx-medium"> Phase: {res.Phase__c}</p>
+                                    <p class="slds-var-m-bottom_xx-medium"> Description: {res.Description__c}</p>
+                                </div>-->
+                            </lightning-card>
+                        </lightning-layout-item>
+                    </template>
+                </div>
+                
+            </lightning-layout>
+
+        </lightning-card>
+       
+        
+   
+</template>

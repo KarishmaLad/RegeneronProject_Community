@@ -1,0 +1,40 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+        <lightning-layout-item size="12">
+            <div class="heading">Find Your Clinical Trial Matches</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="details">Enter your details below to help us find a trial that’s a match for you.</div>
+        </lightning-layout-item>
+    <!--</lightning-layout>-->
+        <lightning-card>
+           <!----> <lightning-layout class="combos">
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-combobox 
+                        name="category" 
+                        label="Category" 
+                        value={selectedCategory} 
+                        placeholder="Select Category" 
+                        options={CategoryOptions} >
+                    </lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+                
+                <lightning-layout-item padding="around-small">
+                    <div>
+                        <lightning-combobox 
+                        name="location" 
+                        label="Location" 
+                        value={selectedLocation} 
+                        placeholder="Select Location" 
+                        options={LocationOptions} >
+                    </lightning-combobox>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+
+   
+</template>

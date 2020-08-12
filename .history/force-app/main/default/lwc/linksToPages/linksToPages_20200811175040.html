@@ -1,0 +1,41 @@
+<template>
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+        <lightning-layout-item size="12">
+            <div class="heading">Find a Clinical Trial</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <div class="details">We have clinical trials enrolling or planned for multiple cancer types. Choose from the list below to learn more.</div>
+        </lightning-layout-item>
+
+        <div class="slds-grid">
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <lightning-layout-item>
+                    <div class="slds-p-around_small">
+                        <!--<button type="submit" class="slds-button slds-button_brand slds-button_stretch">HTML Button</button>-->
+                        <lightning-button  label="Cervical" title="Cervical" class="stretchButton" onclick={GoToHematologicalPage}></lightning-button>
+                    </div>
+                </lightning-layout-item>
+              </span>
+            </div>
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <lightning-layout-item>
+                    <div class="slds-p-around_small">
+                        <!--<button type="submit" class="slds-button slds-button_brand slds-button_stretch">HTML Button</button>-->
+                        <lightning-button  label="Hematological" title="Hematological"  class="stretchButton" onclick={GoToHematologicalPage}></lightning-button>
+                    </div>
+                </lightning-layout-item>
+              </span>
+            </div>
+          </div>
+
+
+        
+       
+
+    </lightning-layout>
+
+    
+</template>

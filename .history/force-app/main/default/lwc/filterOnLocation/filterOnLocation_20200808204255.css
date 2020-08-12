@@ -1,0 +1,24 @@
+.container {
+    background-color: #38B5E6;
+    padding: 16px;
+    max-height: 600px;
+    }
+
+.heading {
+        font-size: 2rem;
+        font-weight: 100;
+        color: white;
+        text-align: left;
+        }
+        
+.details {
+        font-size: 1rem;
+        font-weight: 50;
+        color: white;
+        text-align: left;
+        }
+
+.combos {
+    background-color: #38B5E6;
+    
+}
