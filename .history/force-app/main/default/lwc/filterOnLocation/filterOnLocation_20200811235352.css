@@ -25,7 +25,7 @@
 
 .cards {
     background-color: #38B5E6;
-    
+    color: #38B5E6;
 }
 
 .resultTile {
@@ -100,13 +100,10 @@
         right: 0;
       }
 
-      .slds-card__header
-     {
-        background-color:  #38B5E6;
+      .slds-card__header, slds-grid{
+        background-color:  #38B5E6;;
       }
-    .slds-card{
-      background-color:  #38B5E6;
-    }
+
       
 /*.findtrialbtn {
     background-color:#D60057;

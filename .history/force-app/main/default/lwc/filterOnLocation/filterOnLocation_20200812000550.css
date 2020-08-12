@@ -25,7 +25,7 @@
 
 .cards {
     background-color: #38B5E6;
-    
+    color: #38B5E6;
 }
 
 .resultTile {
@@ -46,7 +46,7 @@
 
 .slds-grid--align-spread {
     justify-content: space-between;
-    
+    background-color: #38B5E6;
   }
 
   .slds-col,
@@ -103,6 +103,7 @@
       .slds-card__header
      {
         background-color:  #38B5E6;
+        
       }
     .slds-card{
       background-color:  #38B5E6;
